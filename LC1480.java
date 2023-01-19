@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class LC1480 {
 
     public int[] runningSum(int[] nums) {
@@ -15,7 +17,9 @@ public class LC1480 {
         LC1480 lc1480 = new LC1480();
         int[] myArray = {1,2,3,4};
         int[] mySum = lc1480.runningSum(myArray);
+        String myStringSum = Arrays.toString(mySum);
         System.out.println(mySum);
+        System.out.println(myStringSum);
     }
 
 }
