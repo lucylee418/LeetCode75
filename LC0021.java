@@ -22,11 +22,16 @@ class LC0021 {
 
 
 
-
     public static void main (String[] args){
         LC0021 lc0021 = new LC0021();
-        ListNode l1 = "abc";
-        ListNode l2 = "ahbgdc";
-        System.out.println(lc0021.mergeTwoLists(l1, l2));
+        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+        ListNode myNodes = lc0021.mergeTwoLists(l1, l2);
+
+        // print values
+        while (myNodes != null){
+            System.out.println(myNodes.val);
+            myNodes = myNodes.next;
+        }
     }
 }
