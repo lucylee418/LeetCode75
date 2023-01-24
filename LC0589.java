@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javax.swing.RootPaneContainer;
-
 public class LC0589 {
     public List<Integer> preorder(Node root) {
         // Initialize
@@ -17,17 +15,19 @@ public class LC0589 {
         while (!nodes.isEmpty()) {
             // pull out 3->(5->6)->2->4
             Node currNode = nodes.pollLast();
-            System.out.println("currNode: "+currNode.val);
-            System.out.println("nodes after pollLast: "+ nodes);
+            // System.out.println("currNode: "+currNode.val);
+            // System.out.println("nodes after pollLast: "+ nodes);
             valList.add(currNode.val);
             // Reverses the order of the elements in the specified list.
-            Collections.reverse(currNode.children);
-            // Add from resersly (4->2->3->6->5)
-            for (Node child : currNode.children) {
-                // 1st of grandchild will come before 2nd of first child
-                nodes.add(child);
+            if (currNode.children != null)
+                {Collections.reverse(currNode.children);
+                // Add from resersly (4->2->3->6->5)
+                for (Node child : currNode.children) {
+                    // 1st of grandchild will come before 2nd of first child
+                    nodes.add(child);
+                }
             }
-            System.out.println("nodes after addition: "+ nodes);
+            // System.out.println("nodes after addition: "+ nodes);
         }
         return valList;
       }
